@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import List from './List'
-import ListControls from './ListControls';
+import AddItem from './AddItem';
+import DeleteItem from './DeleteItem';
 
 class App extends React.Component {
 	state = {
@@ -32,10 +33,11 @@ class App extends React.Component {
 					<h1 className="App-title">ReactND - Coding Practice</h1>
 				</header>
 				<h2>Shopping List</h2>
-				<ListControls 
-					handleAdd={this.addItem} 
+				<AddItem handleAdd={this.addItem} />
+				<DeleteItem 
 					handleDelete={this.deleteLastItem}
-					buttonDisabled={this.noItemsFound()} />
+					buttonDisabled={this.noItemsFound()}
+				/>
 				<List items={this.state.items}/>
 			</div>
 		);
